@@ -79,7 +79,6 @@
           BlueShieldOfficer: [ 5, 5 ]
           #law
           IAA: [ 1, 1 ]
-          Magistrat: [ 1, 1 ]
           Lawyer: [ 3, 3 ]
           NtrOfficer: [ 2, 2 ]
           # silicon
