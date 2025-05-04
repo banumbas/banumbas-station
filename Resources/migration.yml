@@ -696,3 +696,6 @@ ScienceTechFab: null
 ReverseEngineeringMachine: null
 ScienceTechFabCircuitboard: null
 EngineeringTechFabCircuitboard: null
+LockerBlueshieldFilledUplink: LockerBlueshieldEnsignFilled
+LockerBlueshieldFilledUplinkMultiphase: LockerBlueshieldEnsignFilled
+GunSafeBlueShield: null

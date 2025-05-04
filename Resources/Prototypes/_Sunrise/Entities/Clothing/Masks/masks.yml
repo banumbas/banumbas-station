@@ -308,10 +308,3 @@
     - Snout
     hideOnToggle: true
   - type: FlashImmunity #BALANCE PR
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.90
-        Heat: 0.90
