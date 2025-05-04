@@ -45,7 +45,6 @@
     outerClothing: ClothingOuterArmorBlueShield
     id: BlueShieldPDA
     ears: ClothingHeadsetBlueShield
-    belt: ClothingBeltBlueShieldWebbingFilled
     gloves: ClothingHandsGlovesCombat
   storage:
     back:

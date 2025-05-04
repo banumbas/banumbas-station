@@ -696,6 +696,9 @@ ScienceTechFab: null
 ReverseEngineeringMachine: null
 ScienceTechFabCircuitboard: null
 EngineeringTechFabCircuitboard: null
+WeaponPistolDeagle: null #Пока не обновят кабинеты ГСБ на картах.
+MagazineDeagle: null
+MagazineMagnum: null
 LockerBlueshieldFilledUplink: LockerBlueshieldEnsignFilled
 LockerBlueshieldFilledUplinkMultiphase: LockerBlueshieldEnsignFilled
 GunSafeBlueShield: null
