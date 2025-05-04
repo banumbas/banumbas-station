@@ -46,8 +46,9 @@
       tags:
       - Document
       - Paper
+      - Sheet
     storage:
-      SheetPrinter: 0
+      Paper: 5000
 
 - type: entity
   id: ExosuitFabricatorHyperConvection

@@ -145,6 +145,7 @@
     - id: WeaponDisabler
     - id: ClothingEyesHudCommand
     - id: FlippoLighterSunriseHop  # Sunrise-Flippo
+    - id: SheetPaper # SUNRISE EDIT FOR PRINTER
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
