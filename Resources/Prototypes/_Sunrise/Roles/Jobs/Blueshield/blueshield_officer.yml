@@ -43,7 +43,7 @@
     shoes: ClothingShoesBootsBlueShieldFilled
     eyes: ClothingEyesGlassesBlueShield
     outerClothing: ClothingOuterArmorBlueShield
-    id: BlueShieldPDA
+    id: BlueShieldOfficerPDA
     ears: ClothingHeadsetBlueShield
     gloves: ClothingHandsGlovesCombat
   storage:

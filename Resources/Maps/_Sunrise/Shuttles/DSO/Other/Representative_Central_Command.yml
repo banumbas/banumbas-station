@@ -651,7 +651,7 @@ entities:
     - type: Transform
       pos: -4.254051,9.584671
       parent: 1
-- proto: BlueShieldIDCard
+- proto: BlueShieldOfficerIDCard
   entities:
   - uid: 39
     components:

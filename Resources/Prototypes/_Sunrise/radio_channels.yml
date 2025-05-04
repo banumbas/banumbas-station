@@ -10,7 +10,7 @@
   name: chat-radio-blue-shield
   keycode: 'б'
   frequency: 1781
-  color: "#1970fc"
+  color: "#005bfb"
   longRange: false
 
 - type: radioChannel

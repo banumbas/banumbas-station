@@ -2,7 +2,7 @@
   id: BlueShieldEnsign
   name: job-name-blueshield-ensign
   description: job-description-blueshield-ensign
-  playTimeTracker: JobBlueShieldEsing
+  playTimeTracker: JobBlueShieldEnsign
   requirements:
     - !type:DepartmentTimeRequirement
       department: BlueShield
@@ -48,7 +48,7 @@
     eyes: ClothingEyesGlassesBlueShield
     head: ClothingHeadHatBeretBlueShield
     outerClothing: ClothingOuterArmorBlueShield
-    id: BlueShieldPDA
+    id: BlueShieldEnsignPDA
     ears: ClothingHeadsetBlueShieldEnsign
     belt: ClothingBeltBlueShieldWebbingFilled
     gloves: ClothingHandsGlovesCombat
