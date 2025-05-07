@@ -83,6 +83,62 @@
           Blunt: 1
           Slash: 1
 
+#Sunrise-Start
+- type: entity
+  name: riot strobe shield
+  parent: [ BaseShield, BaseSecurityContraband, MachineComponentSounds ]
+  id: RiotShieldStrobe
+  description: A large tower shield with atached Flash. Good for controlling crowds.
+  components:
+    - type: Sprite
+      sprite: _Sunrise/Objects/Weapons/Melee/shields.rsi
+      layers:
+      - state: riot-icon
+        map: [ "enum.FlashVisuals.BaseLayer" ]
+      - state: flashing
+        map: [ "enum.FlashVisuals.LightLayer" ]
+        visible: false
+        shader: unshaded
+    - type: Flash
+    - type: LimitedCharges
+      maxCharges: 5
+    - type: MeleeWeapon
+      wideAnimationRotation: 180
+      damage:
+        types:
+          Blunt: 0 # melee weapon to allow flashing individual targets
+      angle: 10
+    - type: Item
+      size: Ginormous
+      sprite: _Sunrise/Objects/Weapons/Melee/shields.rsi
+      heldPrefix: riot-icon
+    - type: UseDelay
+    - type: Appearance
+    - type: GenericVisualizer
+      visuals:
+        enum.FlashVisuals.Burnt:
+          enum.FlashVisuals.BaseLayer:
+            True: {state: burnt}
+        enum.FlashVisuals.Flashing:
+          enum.FlashVisuals.LightLayer:
+            True: {visible: true}
+            False: {visible: false}
+    - type: StaticPrice
+      price: 90
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 0.7
+          Slash: 0.7
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
+        flatReductions:
+          Blunt: 1
+          Slash: 1
+#Sunrise-End
+
 - type: entity
   name: laser shield
   parent: [ BaseShield, BaseSecurityContraband ]
