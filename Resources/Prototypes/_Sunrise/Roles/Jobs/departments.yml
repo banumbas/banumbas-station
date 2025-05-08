@@ -16,7 +16,7 @@
   description: department-Blueshield-description
   color: "#005bfb"  # Иначе плохо видно
   roles:
-    - BlueShieldEnsign
+#    - BlueShieldEnsign
     - BlueShieldOfficer
   primary: false
   weight: 50
