@@ -1,7 +1,7 @@
 - type: entity
   name: NVD
   id: ClothingEyesNVD
-  parent: [BaseItem, PowerCellSlotSmallItem]
+  parent: [BaseItem]
   description: Night vision device. Provides an image of the terrain in low-light conditions.
   components:
   - type: Item
@@ -11,10 +11,6 @@
       - state: icon
       - state: icon-unshaded
         shader: unshaded
-      - state: light-overlay
-        visible: false
-        shader: unshaded
-        map: [ "enum.NVDVisuals.Light" ]
   - type: Clothing
     sprite: _Sunrise/Clothing/Eyes/Glasses/nvd.rsi
     quickEquip: true
@@ -25,13 +21,6 @@
         shader: unshaded
     slots: [ Eyes ]
   - type: Appearance
-  - type: NightVisionDevice
-    isPowered: true
-    displayColor: "#82eb6c"
-    displayShader: NVDDisplay
-  - type: PowerCellDraw
-    drawRate: 0
-    useRate: 20
 
 - type: entity
   name: NVD Security
@@ -48,13 +37,6 @@
       - state: icon-unshaded
         shader: unshaded
       - state: light-overlay
-        visible: false
-        shader: unshaded
-        map: [ "enum.NVDVisuals.Light" ]
-  - type: NightVisionDevice
-    isPowered: true
-    displayColor: "#82eb6c"
-    displayShader: NVDDisplay
 
 - type: entity
   name: Med-Security NVD
@@ -70,14 +52,6 @@
       - state: icon
       - state: icon-unshaded
         shader: unshaded
-      - state: light-overlay
-        visible: false
-        shader: unshaded
-        map: [ "enum.NVDVisuals.Light" ]
-  - type: NightVisionDevice
-    isPowered: true
-    displayColor: "#82eb6c"
-    displayShader: NVDDisplay
 
 - type: entity
   parent: [ClothingEyesNVD, ShowSecurityIcons]
@@ -90,15 +64,6 @@
       - state: icon
       - state: icon-unshaded
         shader: unshaded
-      - state: light-overlay
-        visible: false
-        shader: unshaded
-        map: [ "enum.NVDVisuals.Light" ]
-  - type: ShowSyndicateIcons
-  - type: NightVisionDevice
-    isPowered: true
-    displayColor: "#ff6e6e"
-    displayShader: NVDDisplay
 
 - type: entity
   parent: ClothingEyesNVD
@@ -112,13 +77,3 @@
       - state: icon-unshaded
         shader: unshaded
       - state: light-overlay
-        visible: false
-        shader: unshaded
-        map: [ "enum.NVDVisuals.Light" ]
-  - type: NightVisionDevice
-    isPowered: true
-    displayColor: "#f2fa5c"
-    displayShader: NVDDisplay
-  - type: PowerCellDraw
-    drawRate: 0
-    useRate: 50

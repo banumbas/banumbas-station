@@ -80,9 +80,6 @@
   description: A pair of black sunglasses.
   components:
   - type: ShowSyndicateIcons
-  - type: NightVisionDevice
-    displayColor: "#ff6e6e"
-    displayShader: NVDDisplay
 
 - type: entity
   parent: [ClothingEyesGlassesThermal, ShowSecurityIcons, BaseSyndicateContraband]
