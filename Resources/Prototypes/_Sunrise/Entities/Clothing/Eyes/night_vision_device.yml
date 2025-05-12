@@ -1,16 +1,18 @@
 - type: entity
   name: NVD
   id: ClothingEyesNVD
-  parent: [BaseItem]
+  parent: [ClothingEyesBase, BaseToggleClothing]
   description: Night vision device. Provides an image of the terrain in low-light conditions.
   components:
   - type: Item
+  - type: Appearance
   - type: Sprite
     sprite: _Sunrise/Clothing/Eyes/Glasses/nvd.rsi
     layers:
       - state: icon
       - state: icon-unshaded
         shader: unshaded
+      - state: light-overlay
   - type: Clothing
     sprite: _Sunrise/Clothing/Eyes/Glasses/nvd.rsi
     quickEquip: true
@@ -20,7 +22,18 @@
       - state: equipped-EYES-unshaded
         shader: unshaded
     slots: [ Eyes ]
-  - type: Appearance
+  - type: GroupExamine
+  - type: IdentityBlocker
+    coverage: EYES
+  - type: ToggleClothing
+    action: ActionToggleNightVision
+    disableOnUnequip: true
+    targetSlot: eyes
+  - type: ComponentToggler
+    parent: true
+    components:
+    - type: NightVision
+      effectPrototype: EffectNightVisionHandcrafted
 
 - type: entity
   name: NVD Security
@@ -52,6 +65,7 @@
       - state: icon
       - state: icon-unshaded
         shader: unshaded
+      - state: light-overlay
 
 - type: entity
   parent: [ClothingEyesNVD, ShowSecurityIcons]
@@ -64,6 +78,7 @@
       - state: icon
       - state: icon-unshaded
         shader: unshaded
+      - state: light-overlay
 
 - type: entity
   parent: ClothingEyesNVD
