@@ -12,5 +12,5 @@ public sealed partial class NightVisionComponent : Component
     public EntityUid? Effect = null;
     
     [DataField]
-    public EntProtoId EffectPrototype = default;
+    public EntProtoId EffectPrototype = "EffectNightVision";
 }
