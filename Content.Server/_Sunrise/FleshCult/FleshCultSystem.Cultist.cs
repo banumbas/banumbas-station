@@ -6,6 +6,7 @@ using Content.Server.Forensics;
 using Content.Server.Temperature.Components;
 using Content.Shared._Sunrise.CollectiveMind;
 using Content.Shared._Sunrise.FleshCult;
+using Content.Shared.Eye.Blinding.Components;
 using Content.Shared.Actions;
 using Content.Shared.Body.Part;
 using Content.Shared.Chemistry.Components;
@@ -55,6 +56,7 @@ public sealed partial class FleshCultSystem
     {
         SubscribeLocalEvent<FleshCultistComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<FleshCultistComponent, ComponentShutdown>(OnShutdown);
+        SubscribeLocalEvent<FleshCultistComponent, FleshCultistNightVisionMutationEvent>(OnNightVisionMutation);
         SubscribeLocalEvent<FleshCultistComponent, FleshCultistInsulatedImmunityMutationEvent>(OnInsulatedImmunityMutation);
         SubscribeLocalEvent<FleshCultistComponent, FleshCultistPressureImmunityMutationEvent>(OnPressureImmunityMutation);
         SubscribeLocalEvent<FleshCultistComponent, FleshCultistFlashImmunityMutationEvent>(OnFlashImmunityMutation);
@@ -236,6 +238,10 @@ public sealed partial class FleshCultSystem
         }
     }
 
+    private void OnNightVisionMutation(EntityUid uid, FleshCultistComponent component, FleshCultistNightVisionMutationEvent args)
+    {
+        EnsureComp<NightVisionComponent>(uid);
+    }
     private void OnInsulatedImmunityMutation(EntityUid uid, FleshCultistComponent component, FleshCultistInsulatedImmunityMutationEvent args)
     {
         EnsureComp<InsulatedComponent>(uid);

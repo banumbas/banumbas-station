@@ -33,7 +33,7 @@
     parent: true
     components:
     - type: NightVision
-      effectPrototype: EffectNightVisionHandcrafted 
+      effectPrototype: EffectNightVisionHandcrafted
 
 - type: entity
   name: NVD Security
