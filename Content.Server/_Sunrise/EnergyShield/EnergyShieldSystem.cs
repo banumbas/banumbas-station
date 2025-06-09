@@ -36,37 +36,29 @@ public sealed class EnergyShieldSystem : EntitySystem
             return;
 
         var cost = args.DamageDelta.GetTotal().Float() * component.EnergyCostPerDamage;
+        if (cost <= 0)
+        return;
+
         _battery.UseCharge(uid, cost, battery);
 
         _audio.PlayPvs(component.AbsorbSound, uid);
 
         if (battery.CurrentCharge <= 0)
-            DeactivateShield(uid, component);
+           _itemToggle.Toggle(uid);
+           _audio.PlayPvs(component.ShutdownSound, uid);
     }
 
     private void OnToggleAttempt(EntityUid uid, EnergyShieldComponent component, ref ItemToggleActivateAttemptEvent args)
     {
-        if (!TryComp<BatteryComponent>(uid, out var battery) || battery.CurrentCharge < battery.MaxCharge)
+        if (!TryComp<BatteryComponent>(uid, out var battery) || battery.CurrentCharge < battery.MaxCharge * 0.5f)
         {
             _popup.PopupEntity(
-                Loc.GetString("energy-shield-insufficient-charge"),
+                Loc.GetString("stunbaton-component-low-charge"),
                 args.User ?? uid,
                 args.User ?? uid,
-                PopupType.MediumCaution
+                PopupType.Small
             );
             args.Cancelled = true;
         }
-    }
-
-    private void DeactivateShield(EntityUid uid, EnergyShieldComponent component)
-    {
-        _itemToggle.Toggle(uid);
-        _audio.PlayPvs(component.ShutdownSound, uid);
-        _popup.PopupEntity(
-            Loc.GetString("energy-shield-depleted"),
-            uid,
-            uid,
-            PopupType.LargeCaution
-        );
     }
 }
