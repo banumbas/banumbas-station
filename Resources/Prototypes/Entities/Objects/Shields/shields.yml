@@ -563,20 +563,16 @@
     # Sunrise-Start
     - type: BatterySelfRecharger
       autoRechargeRate: 50
-      rechargeDelay: 8
       autoRecharge: true
       autoRechargePause: true
       autoRechargePauseTime: 5
     - type: EnergyShield
     - type: ExaminableBattery
-      showChargeFraction: true
-      precision: 1
     - type: Battery
       maxCharge: 1500
       startingCharge: 1500
     - type: PowerCellDraw
       useRate: 2.5
-      activeDraw: true
     # Sunrise-End
 
 - type: entity

@@ -38,6 +38,8 @@ public sealed class EnergyShieldSystem : EntitySystem
         var cost = args.DamageDelta.GetTotal().Float() * component.EnergyCostPerDamage;
         _battery.UseCharge(uid, cost, battery);
 
+        _audio.PlayPvs(component.AbsorbSound, uid);
+
         if (battery.CurrentCharge <= 0)
             DeactivateShield(uid, component);
     }
