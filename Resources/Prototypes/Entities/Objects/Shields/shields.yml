@@ -568,7 +568,6 @@
       autoRechargePause: true
       autoRechargePauseTime: 5
     - type: EnergyShield
-      dischargePerDamage: 30
     - type: ExaminableBattery
       showChargeFraction: true
       precision: 1
