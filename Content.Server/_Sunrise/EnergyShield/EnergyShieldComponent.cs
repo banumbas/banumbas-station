@@ -25,4 +25,10 @@ public sealed partial class EnergyShieldComponent : Component
     /// </summary>
     [DataField]
     public SoundSpecifier ShutdownSound = new SoundPathSpecifier("/Audio/Machines/energyshield_down.ogg");
+
+    /// <summary>
+    /// При скольки процентах заряда можно включить щит
+    /// </summary>
+    [DataField]
+    public float MinChargeFractionForActivation = 0.5f;
 }

@@ -28,37 +28,50 @@ public sealed class EnergyShieldSystem : EntitySystem
         SubscribeLocalEvent<EnergyShieldComponent, ItemToggleActivateAttemptEvent>(OnToggleAttempt);
     }
 
-    private void OnDamage(EntityUid uid, EnergyShieldComponent component, DamageChangedEvent args)
+    private void OnDamage(Entity<EnergyShieldComponent> ent, ref DamageChangedEvent args)
     {
-        if (!_itemToggle.IsActivated(uid)
-            || args.DamageDelta == null
-            || !TryComp<BatteryComponent>(uid, out var battery))
+        if (!_itemToggle.IsActivated(ent.Owner))
             return;
 
-        var cost = args.DamageDelta.GetTotal().Float() * component.EnergyCostPerDamage;
-        if (cost <= 0)
-        return;
+        if (args.DamageDelta == null)
+            return;
 
-        _battery.UseCharge(uid, cost, battery);
+        if (!TryComp<BatteryComponent>(ent, out var battery))
+            return;
 
-        _audio.PlayPvs(component.AbsorbSound, uid);
+        var totalDamage = args.DamageDelta.GetTotal();
+        if (totalDamage <= 0)
+            return;
+
+        var cost = totalDamage.Float() * ent.Comp.EnergyCostPerDamage;
+        _battery.UseCharge(ent, cost, battery);
+        _audio.PlayPvs(ent.Comp.AbsorbSound, ent);
 
         if (battery.CurrentCharge <= 0)
-           _itemToggle.Toggle(uid);
-           _audio.PlayPvs(component.ShutdownSound, uid);
+        {
+            _itemToggle.Toggle(ent.Owner);
+            _audio.PlayPvs(ent.Comp.ShutdownSound, ent);
+        }
     }
 
-    private void OnToggleAttempt(EntityUid uid, EnergyShieldComponent component, ref ItemToggleActivateAttemptEvent args)
+    private void OnToggleAttempt(Entity<EnergyShieldComponent> ent, ref ItemToggleActivateAttemptEvent args)
     {
-        if (!TryComp<BatteryComponent>(uid, out var battery) || battery.CurrentCharge < battery.MaxCharge * 0.5f)
+        if (TryComp<BatteryComponent>(ent, out var battery) &&
+            battery.CurrentCharge >= battery.MaxCharge * ent.Comp.MinChargeFractionForActivation)
+        {
+            return;
+        }
+
+        if (args.User != null && args.User.Value.IsValid())
         {
             _popup.PopupEntity(
                 Loc.GetString("stunbaton-component-low-charge"),
-                args.User ?? uid,
-                args.User ?? uid,
+                args.User.Value,
+                args.User.Value,
                 PopupType.Small
             );
-            args.Cancelled = true;
         }
+
+        args.Cancelled = true;
     }
 }
