@@ -62,7 +62,7 @@ public sealed class EnergyShieldSystem : EntitySystem
             return;
         }
 
-        if (args.User != null && args.User.Value.IsValid())
+        if (Exists(args.User))
         {
             _popup.PopupEntity(
                 Loc.GetString("stunbaton-component-low-charge"),
