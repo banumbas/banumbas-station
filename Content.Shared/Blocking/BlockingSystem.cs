@@ -29,10 +29,10 @@ public sealed partial class BlockingSystem : EntitySystem
     [Dependency] private readonly FixtureSystem _fixtureSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-    [Dependency] private readonly ItemToggleSystem _toggle = default!; // Sunrise-Edit
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
+    [Dependency] private readonly ItemToggleSystem _toggle = default!; // Sunrise-Edit
 
     public override void Initialize()
     {
@@ -302,6 +302,8 @@ public sealed partial class BlockingSystem : EntitySystem
         if (!_toggle.IsActivated(uid)) // Sunrise-Edit
             fraction = 0f;
         var modifier = component.IsBlocking ? component.ActiveBlockDamageModifier : component.PassiveBlockDamageModifer;
+        if (!_toggle.IsActivated(uid)) // Sunrise-Edit
+            modifier = new DamageModifierSet();
 
         var msg = new FormattedMessage();
         msg.AddMarkupOrThrow(Loc.GetString("blocking-fraction", ("value", MathF.Round(fraction * 100, 1))));
