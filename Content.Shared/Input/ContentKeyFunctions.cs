@@ -71,6 +71,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction MeleeGunAttack = "MeleeGunAttack";
         public static readonly BoundKeyFunction ToggleStanding = "ToggleStanding";
         public static readonly BoundKeyFunction Jump = "Jump";
+        public static readonly BoundKeyFunction Flip = "Flip";
         public static readonly BoundKeyFunction Reloading = "Reloading";
         public static readonly BoundKeyFunction Interact = "Interact";
         public static readonly BoundKeyFunction LookUp = "LookUp";

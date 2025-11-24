@@ -101,6 +101,7 @@ namespace Content.Client.Input
             human.AddFunction(ContentKeyFunctions.CockGun);
             human.AddFunction(ContentKeyFunctions.MeleeGunAttack);
             human.AddFunction(ContentKeyFunctions.Jump);
+            human.AddFunction(ContentKeyFunctions.Flip);
             human.AddFunction(ContentKeyFunctions.Reloading);
             human.AddFunction(ContentKeyFunctions.Interact);
             human.AddFunction(ContentKeyFunctions.LookUp);
