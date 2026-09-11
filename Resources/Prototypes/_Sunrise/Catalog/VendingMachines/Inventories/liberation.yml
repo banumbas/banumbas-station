@@ -37,7 +37,6 @@
     WeaponRifleSKM24: 3
     WeaponRifleLecterMk2: 3
     WeaponRifleFoam: 3
-    WeaponRifleARG: 3
     WeaponRifleM52: 3
     WeaponRifleM90GrenadeLauncher: 3
     WeaponRifleLecter: 3
@@ -63,7 +62,6 @@
     WeaponShotgunTrenchgun4034Sawn: 3
     WeaponShotgunRiot: 3
     WeaponShotgunRiotSawn: 3
-    WeaponShotgunCombat: 3
     WeaponShotgunCycler: 3
     WeaponShotgunGA12: 3
     WeaponShotgunMinotaur: 3
@@ -71,14 +69,12 @@
 
     WeaponSubMachineGunAtreides: 3
     WeaponSubMachineGunC20r: 3
-    WeaponSubMachineGunC40r: 3
+    WeaponSubMachineGunVector: 3
     WeaponSubMachineGunDrozd: 3
     WeaponSubMachineGunDrozdMk2: 3
     WeaponSubMachineGunP90: 3
     WeaponSubMachineGunForged: 6
-    WeaponSubMachineGunMP5: 3
     WeaponSubMachineGunNewVector: 3
-    WeaponRifleLecterMk3: 3
     WeaponAJ100: 3
     WeaponSIAR52: 3
     WeaponSubMachineGunSP91RC: 3
@@ -321,7 +317,6 @@
     MagazinePistolSubMachineGunPPSH: 3
     MagazineP90: 5
     MagazineMP7: 5
-    MagazineMP5: 5
     MagazineBoxPistolRubber: 3
     MagazineBoxPistolSP: 3
     MagazineBoxPistolHP: 3
@@ -336,33 +331,26 @@
     MagazineLightRifleMaxim: 3
     MagazineRifleM52AP: 5
     MagazineRifleM52FMJ: 5
-    MagazineRifleM52HP: 5
-    MagazineRifleM52SP: 5
+    MagazineRifleM52SP: 10
     MagazineRifleM52Incendiary: 5
     MagazineRifleM52Practice: 5
     MagazineRifleM52Uranium: 5
-    MagazineRifleSP: 5
-    MagazineRifleHP: 5
+    MagazineRifleSP: 10
     MagazineRifleFMJ: 5
     MagazineRifleAP: 5
-    MagazineBoxRifleSP: 3
-    MagazineBoxRifleHP: 3
+    MagazineBoxRifleSP: 6
     MagazineBoxRifleFMJ: 3
     MagazineBoxRifleAP: 3
-    MagazineLightRifleSP: 5
-    MagazineLightRifleHP: 5
+    MagazineLightRifleSP: 10
     MagazineLightRifleFMJ: 5
     MagazineLightRifleAP: 5
-    MagazineBoxLightRifleSP: 3
-    MagazineBoxLightRifleHP: 3
+    MagazineBoxLightRifleSP: 6
     MagazineBoxLightRifleFMJ: 3
     MagazineBoxLightRifleAP: 3
-    MagazineRifleHeavySP: 5
-    MagazineRifleHeavyHP: 5
+    MagazineRifleHeavySP: 10
     MagazineRifleHeavyFMJ: 5
     MagazineRifleHeavyAP: 5
-    MagazineBoxHeavyRifleSP: 3
-    MagazineBoxHeavyRifleHP: 3
+    MagazineBoxHeavyRifleSP: 6
     MagazineBoxHeavyRifleFMJ: 3
     MagazineBoxHeavyRifleAP: 3
     MagazineBoxHeavyRiflePractice: 3
@@ -373,16 +361,14 @@
     MagazineBoxAntiMateriel: 3
     # LMG Ammo
     MagazineLightMachineGunMG60: 5
-    MagazineLightRifleBeltBox: 5
-    MagazineLightRifleBeltBoxHP: 5
+    MagazineLightRifleBeltBox: 10
     MagazineLightRifleBeltBoxFMJ: 5
     MagazineLightRifleBeltBoxAP: 5
     MagazineLightRifleBeltBoxIncendiary: 5
     MagazineLightRifleBeltBoxPractice: 5
     MagazineLightRifleBeltBoxUranium: 5
     MagazineMachineGunMG42: 5
-    MagazineBoxRifleMachineSP: 3
-    MagazineBoxRifleMachineHP: 3
+    MagazineBoxRifleMachineSP: 6
     MagazineBoxRifleMachineFMJ: 3
     MagazineBoxRifleMachineAP: 3
     MagazineBoxRifleMachinePractice: 3
@@ -394,6 +380,18 @@
     # Test Tools
     AdminPDA: 3
     AccessConfiguratorUniversal: 3
+    # Uplinks
+    BaseUplinkRadioDebug: 3
+    BaseUplinkRadioDebug999: 3
+    BaseUplinkRadio60TC: 3
+    UplinkRadioAssaultOperatives40TC: 3
+    UplinkNTERTAmber: 3
+    UplinkNTERTRed: 3
+    UplinkNTERTGamma: 3
+    UplinkNTERTEpsilon: 3
+    UplinkNTERTBlueShield: 3
+    UplinkNTERTDebug: 3
+    PirateUplinkDebug: 3
     # Mechs
     MechHauler: 2
     MechBigYarrkeBattery: 2
